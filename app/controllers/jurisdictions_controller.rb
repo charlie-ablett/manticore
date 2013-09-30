@@ -1,0 +1,2 @@
+class JurisdictionsController < ApplicationController
+end
