@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20130930104641) do
   create_table "addresses", force: true do |t|
     t.integer  "user_id"
     t.integer  "street_number"
-    t.integer  "street_name"
+    t.string  "street_name"
     t.integer  "apartment_number"
     t.string   "suburb_name"
     t.string   "rural_delivery"

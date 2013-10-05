@@ -1,5 +1,16 @@
+puts "Seeding database..."
+Country.delete_all
+Jurisdiction.delete_all
+City.delete_all
+Address.delete_all
+User.delete_all
+
+puts "old data cleared"
+
    nz = Country.create(name: 'New Zealand')
    canada = Country.create( name: 'Canada')
+
+puts "added countries"
 
    bc = Jurisdiction.create(name: 'British Columbia', country_id: canada.id, kind: 'province')
    ab = Jurisdiction.create(name: 'Alberta', country_id: canada.id, kind: 'province')
@@ -36,6 +47,8 @@
    nzblank = Jurisdiction.create(name: '', country_id: nz.id)
    cablank = Jurisdiction.create(name: '', country_id: canada.id)
 
+puts "added jurisdictions"
+
    hamon = City.create(name: 'Hamilton', jurisdiction_id: on.id)
    hamwai = City.create(name: 'Hamilton', jurisdiction_id: wai.id)
 
@@ -62,12 +75,16 @@
    welly = City.create(name: 'Wellington', jurisdiction_id: wel.id)
    rag = City.create(name: 'Raglan', jurisdiction_id: wai.id)
 
+puts "added cities"
+
    craig1 = User.create(name: "Craig Schock", email: "cschock@waikato.ac.nz")
    craig2 = User.create(name: "Craig Schock", email: "craig.schock@gmail.com")
    craig3 = User.create(name: "Craig Smith", email: "craigsmith@gmail.com")
    craig4 = User.create(name: "Craig Smith-Jones", email: "csj@gmail.com")
    craig5 = User.create(name: "Craig Johnson", email: "cjohnson@example.com")
    ruth1 = User.create(name: "Ruth Ablett", email: "ruthablett@gmail.com")
+
+puts "added users"
 
    addr1 = Address.create(user_id: craig1.id, street_number: 289, street_name: "Morrinsville Road", suburb_name: "Newstead", rural_delivery: "RD6", city_id: hamwai.id, post_code: '3216')
    addr2 = Address.create(user_id: ruth1.id, street_number: 289, street_name: "Morrinsville Road", suburb_name: "Newstead", rural_delivery: "RD6", city_id: hamwai.id, post_code: '3216')
@@ -76,3 +93,5 @@
 
    add4 = Address.create(user_id: craig4.id, apartment_number: 1, street_number: 864, street_name: "Government Road", city_id: rag.id, post_code: '3221')
    add5 = Address.create(user_id: craig5.id, street_number: 2, street_name: 'Waitangi Road', city_id: nel.id, post_code: '8098')
+
+puts "added addresses"
