@@ -1,12 +1,12 @@
 app = angular.module("Manticore", [
-    'resources.countries',
-    'directives.share',
+    'ui.bootstrap.dialog',
+    'ui.bootstrap.collapse',
+    'resources.countries'
 ])
-.config(["$httpProvider", "$anchorScrollProvider", '$urlRouterProvider', ($httpProvider, $anchorScrollProvider, $urlRouterProvider)->
+.config(["$httpProvider", "$anchorScrollProvider", ($httpProvider, $anchorScrollProvider)->
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-        $urlRouterProvider.otherwise('/')
     ])
-.run(["$rootScope", "$http", "$state", "$stateParams", ($rootScope, $http, $state, $stateParams) ->
+.run(["$rootScope", "$http",  ($rootScope, $http) ->
         $rootScope.$debugMode = "on"
     ])
 
