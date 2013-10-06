@@ -7,8 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def intercept_html_requests
-    puts "html request INTERCEPTED"
-    render('search/index') if request.format == Mime::HTML
+    render 'search/index', query: params[:query] if request.format == Mime::HTML
   end
 
 end

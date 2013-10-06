@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def results
-    @results = User.search_results
+    @results = User.search_results params[:query]
     respond_with @results, root: false
   end
 

@@ -2,10 +2,14 @@
   %h2 This is the Manticore project, a toy app for exploring semantic interfaces within Rails and Angular JS.
   %h4 Usage: "Marshmallow Man".address
   %div{"ng-controller" => "SearchController"}
-    %input#queryBox{"ng-model" => "query", :placeholder => 'your query here. e.g. "Marshmallow Man".address', :type => "text"}/
-    = link_to "search", '#', class: "btn btn-large btn-primary"
-    %p{"ng-repeat" => "country in all_countries"} {{ country.name }}
+    %input#queryBox{"ng-model" => "query_text", :placeholder => 'your query here. e.g. "Marshmallow Man".address', :type => "text"}/
+    %a.btn.btn-large.btn-blue-light{href: "", "ng-click" => "do_search()"} search!
     %hr/
-    Search results:
-    %p{"ng-repeat" => "result in all_results"} {{ result.name }}
+    Search results (query: {{ query_text }} - {{ user_query.length }} result(s)):
+
+    %p{"ng-repeat" => "result in user_query track by $index"}
+      Name: {{ result.name }}
+      Birthdate: {{ result.birthdate }}
+      Address: {{ result.address }}
+
 = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
