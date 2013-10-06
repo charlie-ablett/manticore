@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def intercept_html_requests
     puts "html request INTERCEPTED"
-    render('home/index') if request.format == Mime::HTML
+    render('search/index') if request.format == Mime::HTML
   end
 
 end
