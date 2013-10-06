@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "users/new" do
   before(:each) do
-    assign(:user, stub_model(User,
+    assign(:search, stub_model(User,
       :name => "MyString",
       :email => "MyString"
     ).as_new_record)

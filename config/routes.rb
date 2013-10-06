@@ -1,9 +1,12 @@
 Manticore::Application.routes.draw do
 
-root  'home#index'
-match '/home',    to: 'home#index',           via: 'get'
+root  'search#index'
 
-resources :users
+resources :users do
+  collection do
+    get :results
+  end
+end
 resources :addresses
 resources :cities
 resources :jurisdictions

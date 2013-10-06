@@ -5,8 +5,5 @@ app = angular.module("Manticore", [
 ])
 .config(["$httpProvider", "$anchorScrollProvider", ($httpProvider, $anchorScrollProvider)->
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-    ])
-.run(["$rootScope", "$http",  ($rootScope, $http) ->
-        $rootScope.$debugMode = "on"
-    ])
 
+    ])

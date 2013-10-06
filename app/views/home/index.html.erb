@@ -3,7 +3,21 @@
     This is the home page for the Manticore project, which is a toy app for exploring semantic interfaces within Rails and Angular JS.
   </h2>
 
-  <input type='text'/> <%= link_to "Start!", '#', class: "btn btn-large btn-primary" %>
+  <div ng-controller="SearchController">
+    <h1>{{ title }}</h1>
+
+    <input type='text'/> <%= link_to "Start!", '#', class: "btn btn-large btn-primary" %>
+
+    <p ng-repeat="country in all_countries">{{ country.name }}</p>
+
+    <hr>
+    Search results:
+
+    <p ng-repeat="result in all_results">{{ result.name }}</p>
+  </div>
+
+
+
 
 
 </div>
