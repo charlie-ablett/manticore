@@ -1,12 +1,10 @@
 <div class="center hero-unit">
-  <h2>
-    This is the home page for the Manticore project, which is a toy app for exploring semantic interfaces within Rails and Angular JS.
-  </h2>
+  <h2>This is the Manticore project, a toy app for exploring semantic interfaces within Rails and Angular JS.</h2>
+  <h4>Usage: "Marshmallow Man".address</h4>
 
   <div ng-controller="SearchController">
-    <h1>{{ title }}</h1>
 
-    <input type='text'/> <%= link_to "Start!", '#', class: "btn btn-large btn-primary" %>
+    <input type='text'/> <%= link_to "search", '#', class: "btn btn-large btn-primary" %>
 
     <p ng-repeat="country in all_countries">{{ country.name }}</p>
 
