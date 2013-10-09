@@ -1,9 +1,13 @@
 class SearchController < ApplicationController
-
   respond_to :html
 
   def index
 
+  end
+
+  def results
+    @results = Search.search_results params[:query]
+    respond_with @results, root: false
   end
 
   def show
@@ -18,13 +22,4 @@ class SearchController < ApplicationController
   def edit
   end
 
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_search
-    @search = Search.find(params[:id])
-  end
-
-  def user_params
-    params.require(:search).permit(:name, :email)
-  end
 end
