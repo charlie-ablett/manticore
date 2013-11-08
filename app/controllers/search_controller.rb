@@ -6,7 +6,8 @@ class SearchController < ApplicationController
   end
 
   def results
-    @results = Search.search_results params[:query]
+    @search = Search.new()
+    @results = @search.search_results params[:query]
     respond_with @results, root: false
   end
 
